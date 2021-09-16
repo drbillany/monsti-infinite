@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple transaction</title>
+    <style>
+        .wrapper>* {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script>
+        var decToHex = (val) => {
+            return '0x' + parseFloat(val).toString(16);
+        };
+        var ethToWei = (amt) => {
+            return (parseFloat(amt) * Math.pow(10, 18)).toString();
+        };
+        var gweiToWei = (amt) => {
+            return (parseFloat(amt) * Math.pow(10, 9)).toString();
+        };
+        var handleAccountsChanged = (accounts) => {
+            document.getElementById("from").innerHTML = accounts[0];
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            <button id="connect">Connect</button>
+        </div>
+        <div>
+            <form id="frmSend" method="POST">
+                <span>From: <span id="from">Please connect first</span></span>
+                <input type="text" name="to" placeholder="To address">
+                <input type="text" name="value" placeholder="Value (ETH)">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var btnConnect = document.getElementById("connect");
+        var frmSend = document.getElementById("frmSend");
+        let receiver = frmSend.querySelector('[name="to"]');
+        let valueEth = frmSend.querySelector('[name="value"]');
+
+        btnConnect.addEventListener("click", event => {
+            window.ethereum.request({
+                    method: 'eth_requestAccounts'
+                })
+                .then((accounts) => {
+                    handleAccountsChanged(accounts);
+                })
+                .catch((error) => {
+                    console.log(`ERROR: ${error.message} (${error.code})`);
+                });
+        });
+
+        frmSend.addEventListener("submit", event => {
+            event.preventDefault();
+            window.ethereum.request({
+                    method: 'eth_sendTransaction',
+                    params: [{
+                        from: window.ethereum.selectedAddress,
+                        to: receiver.value,
+                        value: decToHex(ethToWei(valueEth.value)), // must be in hex wei
+                        // gas: decToHex(gasLimit.value), // (aka gasLimit) must be in hex gwei
+                        // gasPrice: decToHex(gweiToWei(gasPrice.value)) // must be in hex wei
+                    }]
+                })
+                .then(txnHash => {
+                    console.log(`Transaction hash: ${txnHash}`)
+                })
+                .catch((error) => {
+                    console.log(`ERROR: ${error.message} (${error.code})`);
+                });
+        })
+
+        window.ethereum.on('accountsChanged', (accounts) => {
+            // accounts: Array<string>
+            handleAccountsChanged(accounts);
+        });
+    </script>
+</body>
+
+</html>
