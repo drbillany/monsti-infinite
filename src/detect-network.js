@@ -49,4 +49,4 @@ const detectEthereumNetwork = async () => {
   });
 };
 
-detectEthereumNetwork();
+
