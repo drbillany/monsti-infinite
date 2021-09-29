@@ -111,7 +111,7 @@ export default function Presale() {
         params: [
           {
             from: window.ethereum.selectedAddress,
-            to: "0xc5C1f2e51dA953ac198F4f84eC66b535b516CA29",
+            to: "0x0d8802F91752Abf937fba70F91C40bFceB3b1694",
             value: decToHex(ethToWei(numberToSpend)),
           },
         ],

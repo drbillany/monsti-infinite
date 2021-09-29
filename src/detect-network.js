@@ -48,5 +48,3 @@ const detectEthereumNetwork = async () => {
     }
   });
 };
-
-
