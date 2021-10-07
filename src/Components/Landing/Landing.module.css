@@ -139,6 +139,20 @@ nav {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.previewImagePlayto {
+  top: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+}
+
+.previewImagePlayto img {
+  width: 297px;
+  height: 330px;
+}
+
 @media only screen and (max-width: 900px) {
   .preview {
     height: 100vh;
@@ -148,12 +162,17 @@ nav {
     width: 90vw;
     top: 90vw;
   }
+  .previewImagePlayto {
+    top: 134vw;
+    flex-direction: column;
+  }
 }
 /*! SECTION 2*/
 .parallax {
   height: 50vw;
   position: relative;
 }
+
 .imgHolder {
   position: absolute;
   height: 50vw;
@@ -179,6 +198,10 @@ nav {
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
+@media only screen and (max-width: 900px) {
+  .potions {
+  }
+}
 .textContainer {
   color: #fff;
   width: 20%;
@@ -189,8 +212,12 @@ nav {
 }
 @media only screen and (max-width: 1100px) {
   .potions {
-    height: 125vw;
+    height: 302vw;
+
     background-size: 150% auto;
+  }
+  .parallax {
+    bottom: -210vw;
   }
   .textContainer {
     width: 30%;
@@ -200,6 +227,26 @@ nav {
   }
   .text2 {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .parallax {
+    bottom: -445vw;
+  }
+  .potions {
+    height: 560vw;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+  .parallax {
+    bottom: -402vw;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+  .parallax {
+    bottom: -277vw;
   }
 }
 /*!section 4*/
