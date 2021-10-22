@@ -28,8 +28,8 @@ export default function Nav() {
         <a href='https://monstainfinite.com/moni/' className={L.link}>
           MONI
         </a>
-        <a href='https://monstainfinite.com/presale1/' className={L.link}>
-          Presale1
+        <a href='https://monstainfinite.com/presale/' className={L.link}>
+          Presale
         </a>
         <a
           href='https://monstainfinite.com/game-description/'
@@ -98,8 +98,8 @@ export default function Nav() {
           >
             Monsta Barter
           </a>
-          <a href='https://monstainfinite.com/presale1/' className={L.link}>
-            Presale1
+          <a href='https://monstainfinite.com/presale/' className={L.link}>
+            Presale
           </a>
           <a
             href='https://monstainfinite.com/game-description/'
