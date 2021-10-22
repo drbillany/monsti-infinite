@@ -192,11 +192,11 @@ export default function Presale() {
           <div className={P.rest}>
             <div className={P.timeLeft}>
               {" "}
-              <span>{(progress * 10).toFixed(2)} / 1000 BNB Raised</span>{" "}
+              <span>{(progress * 10).toFixed(2)} / 1000 MONI Raised</span>{" "}
               <span>Remain : 1h: 39m: 21s</span>
             </div>
             <p>
-              <strong>Max Allocation:</strong> 5BNB
+              <strong>Max Allocation:</strong> 500 MONI
             </p>
             <div className={P.subscribe}>
               <div className={P.sub2us}>
@@ -220,18 +220,18 @@ export default function Presale() {
             </div>
             <p className={P.saleDate}>
               {" "}
-              2,088 Inception Monsta Sale will be held on 1st Sept 2021{" "}
+              5,000 Inception Monsta Sale will be held on 22nd Oct 2021{" "}
             </p>
             <ul>
               <li>
                 Inception Monsta will be selling on a bonding curve with each
                 subsequent purchase increasing the price of the Inception
               </li>
-              <li>#1 Inception Monsta will be priced at 0.2 $BNB</li>
-              <li>#2088 Inception Monsta will be priced at 1.0 $BNB </li>
+              <li>#1 Inception Monsta will be priced at 0.2 $MONI</li>
+              <li>#4088 Inception Monsta will be priced at 1.0 $MONI </li>
               <li>
-                Redeeming of BEP-721 NFT will open on 12 October 2021 upon
-                marketplace launch
+                Redeeming of BEP-721 NFT will open on 1 November 2021 upon
+                marketplace
               </li>
             </ul>
           </div>
