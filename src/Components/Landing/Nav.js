@@ -118,7 +118,7 @@ export default function Nav() {
             alt=''
             srcset='https://monstainfinite.com/wp-content/uploads/2021/08/monsta-navbar-flag@2X.png 326w, https://monstainfinite.com/wp-content/uploads/2021/08/monsta-navbar-flag@2X-300x184.png 300w'
           />
-          <div className={L.preSale}>Monsta Presale</div>
+          <div className={L.preSale}>Monsta Sale</div>
         </Link>
       </header>
     </div>
